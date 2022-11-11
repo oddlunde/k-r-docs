@@ -13,7 +13,7 @@ You may need to change the file to be executable
 
 run the script `./runDevelopmentInstall.sh`
 
-Find yourself a coffe while the script do your job :coffe:
+Find yourself a coffe while the script do your job :coffee:
 
 
 ### Basics
