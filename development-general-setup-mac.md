@@ -1,6 +1,6 @@
 # Development guide for Mac users
 
-	:rotating_light: Note that the new Macbook M1/M2 chipset could interfere with the setup. 
+:rotating_light: Note that the new Macbook M1/M2 chipset could interfere with the setup. 
 
 ## Installtion guide
 This guide will run the commands under and install the following programs and tools to help you get ready for development. Except for auth (ssh and aws).
