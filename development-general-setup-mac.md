@@ -153,15 +153,12 @@ services:
 If you studie the docker-compose file thats written in yml it has a volume. This needs to be populated with a test-database from Koer.
 
 Start the services with 
-```bash
-docker-compose up
-```
+`docker-compose up`
+
 This will start the services MongoDB and Redis. 
 
 To check if the containers is running use 
-```bash
-docker ps
-```
+`docker ps`
 This will list the containers running. copy the ID from the mongoDB container.
 `docker exec -it <containerID> bash `
 
