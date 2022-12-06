@@ -2,6 +2,8 @@
 
 :rotating_light: Note that the new Macbook M1/M2 chipset could interfere with the setup. 
 
+If there is more, please update this document so its even easier for the next developer in line :)
+
 ## Installtion guide
 This guide will run the commands under and install the following programs and tools to help you get ready for development. Except for auth (ssh and aws).
 
@@ -15,11 +17,22 @@ Find yourself a coffe while the script do your job :coffee:
 
 
 ### Basics
+- [Development guide for Mac users](#development-guide-for-mac-users)
+  - [Installtion guide](#installtion-guide)
+    - [Basics](#basics)
+    - [Development Tools](#development-tools)
+    - [Auth](#auth)
   - [Brew](#brew)
   - [Git](#git)
   - [Visual Studio](#visual-studio)
   - [Docker](#docker)
+  - [Docker compose](#docker-compose)
   - [MongoDB Compass](#mongodb-compass)
+  - [Nvm](#nvm)
+  - [Node](#node)
+  - [ssh (not in script)](#ssh-not-in-script)
+  - [AWS cli](#aws-cli)
+  - [Docker services](#docker-services)
 
 ### Development Tools
 - [nvm](#nvm)
@@ -48,6 +61,10 @@ Simple text editor [source](https://formulae.brew.sh/cask/visual-studio-code)
 Container service and hub. [source](https://formulae.brew.sh/formula/docker)
 
 `brew install --cask docker `
+
+## Docker compose
+Start services and applications. [source](https://formulae.brew.sh/formula/docker-compose)
+`brew install docker-compose`
 
 ## MongoDB Compass
 Compass is an interactive tool for querying, optimizing, and analyzing your MongoDB data.
@@ -104,4 +121,33 @@ export AWS_ACCESS_KEY_ID=<YOUR-ACCESS-KEY>
 export AWS_SECRET_ACCESS_KEY=<YOUR-SECRET>
 export AWS_DEFAULT_REGION=eu-north-1
 ```
-If there is more, please update this document so its even easier for the next developer in line :)
+
+## Docker services
+To get some of the applications running, you need MongoDB and Redis services running on localhost. This can be done with docker-compose and some data. 
+
+You can add this docker-compose file to get your services up and running. Its recommended to use Docker CLI to help you see the status on the services. 
+
+``` yml
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.2.23
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./dbdata:/data/db
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+  redis:
+    image: redis:5.0.7
+    ports:
+      - "6379:6379"
+    restart: always
+
+```
+
+If you studie the docker-compose file thats written in yml it has a volume. This needs to be populated with a test-database from Koer.
