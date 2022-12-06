@@ -151,3 +151,19 @@ services:
 ```
 
 If you studie the docker-compose file thats written in yml it has a volume. This needs to be populated with a test-database from Koer.
+
+Start the services with 
+```bash
+docker-compose up
+```
+This will start the services MongoDB and Redis. 
+
+To check if the containers is running use 
+```bash
+docker ps
+```
+This will list the containers running. copy the ID from the mongoDB container.
+`docker exec -it <containerID> bash `
+
+To see that your inside the container, the username will change to "root@<containerID>". Use mongorestore with username and password to get the mongodump-koerdb file inserted into the database. 
+`mongorestore -u user -p password --archive=mongodump-koerdb `
