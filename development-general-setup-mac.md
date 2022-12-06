@@ -154,8 +154,8 @@ services:
 
 If you studie the docker-compose file thats written in yml it has a volume. This needs to be populated with a test-database from Koer.
 
-Start the services with 
-`docker-compose up`
+Start the services with `-d`is to be detached (less logg).
+`docker-compose up -d`
 
 This will start the services MongoDB and Redis. 
 
