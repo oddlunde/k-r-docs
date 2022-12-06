@@ -1,11 +1,11 @@
 # Kör Documentation
 
 ## Overview
+This is a guide to help you get started as a developer in Kör. Its not complete, but will help you.
 
 ### Intro
 
 - :computer: [How to get started](#how-to-get-started)
-- :key: [Add ENV](#add-env)
 - :memo: [Git workflow](#git-workflow)
 - :hankey: [Style guide](#style-guide)
 
@@ -15,12 +15,7 @@
 - **Step 0:** Run script in [development environment - general setup - Mac Intel](development-general-setup-mac.md)
 - **Step 1:** Clone the repo
 - **Step 2:** Follow the repo README.md
-- 
----
-### Add ENV
-´´´bash .env
-
-´´´
+  
 ---
 
 ### Git workflow[⬆](#overview)
