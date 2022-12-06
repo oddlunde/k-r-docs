@@ -161,8 +161,14 @@ This will start the services MongoDB and Redis.
 
 To check if the containers is running use 
 `docker ps`
-This will list the containers running. copy the ID from the mongoDB container.
+This will list the containers running. Copy the ID from the mongoDB container.
+You need to give access to the file mongodump-koerdb for the container. 
+ `docker cp mongodump-koerdb <containerID>:mongodump-koerdb`
+
+Next you need to interact with the container
 `docker exec -it <containerID> bash `
 
 To see that your inside the container, the username will change to "root@<containerID>". Use mongorestore with username and password to get the mongodump-koerdb file inserted into the database. 
 `mongorestore -u user -p password --archive=mongodump-koerdb `
+
+This should end up with around 20 000 documents in the database.
