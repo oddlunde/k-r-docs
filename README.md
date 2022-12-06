@@ -6,119 +6,21 @@
 
 - :computer: [How to get started](#how-to-get-started)
 - :key: [Add ENV](#add-env)
-- :rocket: [How to build and distribute](#how-to-build-and-distribute)
-- :airplane: [How to use CodePush](#how-to-use-code-push)
-- :hammer: [Tech stack](#tech-stack)
 - :memo: [Git workflow](#git-workflow)
 - :hankey: [Style guide](#style-guide)
 
-### Core modules
-
-- :door: [Session](docs/core-modules/session.md)
-- :file_folder: [Creating a new profile](docs/core-modules/new-profile.md)
-- :school: [Booking a lesson](docs/core-modules/lesson-booking.md)
-- :office: [Booking a program](docs/core-modules/program-booking.md)
-- :red_car: [Private practice](docs/core-modules/private-practice.md)
-
-### 3rd-party services
-
-- :bell: [Push notifications](docs/3rd-party-services/push-notifications.md)
-- :earth_africa: [Maps](docs/3rd-party-services/maps.md)
-- :bar_chart: [Analytics](docs/3rd-party-services/analytics.md)
-- :credit_card: [Payments](docs/3rd-party-services/payments.md)
-- :chart_with_upwards_trend: [Attribution](docs/3rd-party-services/attribution.md)
-- :rotating_light: [Reporting service](docs/3rd-party-services/reporting-service.md)
-
----
 
 ### How to get started[⬆](#overview)
 
-- **Step -1:** Run script in [development environment - general setup](development-general-setup-mac.md)
-- **Step 0:** Make sure you've finished the [development environment setup](https://reactnative.dev/docs/environment-setup) for react native cli project
+- **Step 0:** Run script in [development environment - general setup - Mac Intel](development-general-setup-mac.md)
 - **Step 1:** Clone the repo
-- **Step 2:** Make sure the [Node.js v12+](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) are installed
-- **Step 3:** Make `cd` to the cloned repo
-- **Step 4:** :closed_lock_with_key: [Add environment variables and secrets](#add-env)
-- **Step 5:** Install dependencies with `yarn` command
-- **Step 6:** Install pods with `yarn pods` command
-- **Step 7:** Run either `yarn ios-dev` or `yarn android-dev`
-
+- **Step 2:** Follow the repo README.md
+- 
 ---
+### Add ENV
+´´´bash .env
 
-### Add ENV[⬆](#overview)
-
-Each platform has its own environment files.
-
-1. Add `.env.development`, `.env.staging`, and `.env.production` files for each platform in `config/env` folder.
-
-2. Create `secrets.xml` file in the `android/app/src/main/res/values` directory with given content:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="rnbg_license">INSERT_REACT_NATIVE_BACKGROUND_GEOLOCATION_LICENSE_HERE</string>
-  <string name="codepush_deployment_key">INSERT_YOUR_KEY</string>
-  <string name="codepush_public_key">-----BEGIN PUBLIC KEY-----
-YOUR_KEY
------END PUBLIC KEY-----</string>
-  <string name="fb_app_id">INSERT_FACEBOOK_APP_ID</string>
-  <string name="branch_test_mode">INSERT_YOUR_VALUE</string>
-  <string name="branch_key">INSERT_BRANCH_KEY</string>
-  <string name="gm_api_key">INSERT_GOOGLE_MAPS_API_KEY</string>
-</resources>
-```
-
----
-
-### How to build and distribute[⬆](#overview)
-
-If you wanna build the project locally - skip the next part of this section and go to the [React Native docs](https://reactnative.dev/docs/getting-started) instead.
-
-The [appcenter](https://appcenter.ms/apps) handles build and distribute tasks for the project.
-
-The flow:
-
-1. The appcenter receives all changes almost immediately and you can build there manually or configure the build to run automatically.
-2. When the build task is finished the target distribution group will receive an email with a link for downloading the app on device.
-
----
-
-### How to use CodePush[⬆](#overview)
-
-The [CodePush](https://github.com/microsoft/react-native-code-push) is a tool for pushing code changes (JavaScript) into your environment.
-
-The flow:
-
-1. Before pushing your code _MAKE SURE_ that you don't have wrong environment cached. `react-native start --reset-cache` helps with that. Btw, this command has been already included in all codepush-related scripts in `package.json`.
-2. You need `public.pem` and `private.pem` keys to be present in the root project folder
-3. To push your code into development or staging environment use these scripts:
-
-- `yarn push-android-stage`
-- `yarn push-ios-stage`
-
-4. To push your code into production environment use these scripts:
-
-- `yarn push-android-prod`
-- `yarn push-ios-stage`
-
-5. To clean entire codepush bundles directory use:
-
-- `yarn push-android-stage-clean`
-- `yarn push-ios-stage-clean`
-- `yarn push-android-prod-clean`
-- `yarn push-ios-prod-clean`
-
----
-
-### Tech stack[⬆](#overview)
-
-- The app is generated with [react-native-cli](https://github.com/react-native-community/cli)
-- [React Native v0.64.2](https://facebook.github.io/react-native/docs/getting-started)
-- [TypeScript v4.0.5](https://www.typescriptlang.org/docs/home.html)
-- [React Navigation v5](https://reactnavigation.org/docs/en/getting-started.html)
-- [Redux v4.0.5](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/)
-- [Styled components v4.4.1](https://www.styled-components.com/docs)
-
+´´´
 ---
 
 ### Git workflow[⬆](#overview)
