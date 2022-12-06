@@ -13,7 +13,9 @@ You may need to change the file to be executable
 
 run the script `./runDevelopmentInstall.sh`
 
-Find yourself a coffe while the script do your job :coffee:
+You need to press Enter to procced then;
+find yourself a coffe while the script do your job :coffee:
+
 
 
 ### Basics
